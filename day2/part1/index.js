@@ -1,12 +1,13 @@
 const fs = require('fs');
+
 const solve =  async () => {
-    const input = await fs.readFileSync("day2/input.txt").toString().split('\n');
+    const input = await fs.readFileSync('day2/input.txt').toString().split('\n');
     return input.filter(ins => {
         return hasRepeating(ins, 2);
     }).length * 
     input.filter(ins => {
         return hasRepeating(ins, 3);
-    }).length
+    }).length;
 }
 
 const hasRepeating = (inputString, timesRepeated) => {

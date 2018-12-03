@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const solve = async () => {
     const input = await fs.readFileSync("day1/input.txt").toString().split('\n');
     let runningTotal = 0;
@@ -11,6 +12,7 @@ const solve = async () => {
     }));
     return runningTotal;
 }
+
 solve().then((output) => {
     console.log(output);
 })

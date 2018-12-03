@@ -2,12 +2,12 @@ const fs = require('fs');
 
 const solve =  async () => {
     const input = await fs.readFileSync("day3/input.txt").toString().split('\n');
-    const claims = createClaims(input)
+    const claims = createClaims(input);
     let fabric = createFabric();
     for(let i =0; i<claims.length; i++){
         fabric = addClaim(fabric, claims[i]);
     }
-    return getOverlaps(fabric)
+    return getOverlaps(fabric);
 }
 
 const createClaims = (input) => {

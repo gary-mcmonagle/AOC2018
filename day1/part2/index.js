@@ -1,7 +1,8 @@
 const fs = require('fs');
 
 const solve = async () => {
-    const freqs = await fs.readFileSync("day1/input.txt").toString().split('\n');
+    const freqs = await fs.readFileSync('day1/input.txt')
+    .toString().split('\n');
     let runningTotal = 0;
     let freqInd = 0; 
     let seenFreqs = [];
@@ -13,7 +14,7 @@ const solve = async () => {
         }
         runningTotal += frequencyChangeNum;
         if(seenFreqs.includes(runningTotal)){
-            return runningTotal
+            return runningTotal;
         }
         seenFreqs.push(runningTotal);
         freqInd++; 
