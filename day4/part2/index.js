@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 const fs = require('fs');
 
 const solve = async () => {
@@ -52,7 +54,7 @@ const createShifts = (input) => {
       state = 'wakes up';
     }
     else{
-      if(state = 'falls asleep' && row.info == 'wakes up'){
+      if(state == 'falls asleep' && row.info == 'wakes up'){
         for(let i = input[index-1].time.getMinutes(); i< row.time.getMinutes(); i++){
           shift.minutesAsleep.push(i);
         }

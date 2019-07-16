@@ -6,7 +6,8 @@ const solve = async () => {
     let runningTotal = 0;
     let freqInd = 0; 
     let seenFreqs = [];
-    while(true){
+    let got = false;
+    while(!got){
         let frequencyChange = freqs[freqInd];
         let frequencyChangeNum = parseInt(frequencyChange.substring(1));
         if(frequencyChange[0] == '-'){

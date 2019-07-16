@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 const fs = require('fs');
 
 const solve = async () => {
-  let shift = {}
   const input = await fs.readFileSync('day4/input.txt').toString().split('\n')
   .map((row) => {
     return parseInput(row);
@@ -15,7 +16,7 @@ const solve = async () => {
   })))
   .map((guardId) => {
     let totalAsleepMinutes = []
-    guard = {id: guardId};
+    let guard = {id: guardId};
     shifts.map((shift) => {
       if(guardId == shift.id){
         totalAsleepMinutes = totalAsleepMinutes.concat(shift.minutesAsleep);
@@ -38,14 +39,15 @@ const createShifts = (input) => {
   let shifts = [];
   input.forEach((row, index) => {
     if(row.info.split(' ')[0] == 'Guard'){
+      let shift = {}
       if(index != 0){
-        shifts.push(shift);
+        shifts.push({});
       }
       shift = {id: row.info.split(' ')[1], minutesAsleep: []};
-      state = 'wakes up';
+      let state = 'wakes up';
     }
     else{
-      if(state = 'falls asleep' && row.info == 'wakes up'){
+      if(state == 'falls asleep' && row.info == 'wakes up'){
         for(let i = input[index-1].time.getMinutes(); i< row.time.getMinutes(); i++){
           shift.minutesAsleep.push(i);
         }

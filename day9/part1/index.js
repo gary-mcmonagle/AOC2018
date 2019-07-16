@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const solve = async () => {
   const players = 493;
   const lastMarble = 71863;

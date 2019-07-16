@@ -27,13 +27,9 @@ const createThreeByThreeGrids = (grid) => {
   return grids.sort((a, b) => b.biggest.value - a.biggest.value)[0]
 }
 
-const getHighestValueTL = (grids) => {
-
-}
-
 const setPower = (x, y, gridSerialNumber) => {
   let rackId = x + 10
-  power = rackId * y
+  let power = rackId * y
   power += gridSerialNumber
   power *= rackId
   if(power < 100){

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --colors"
+    "test": "jest --colors",
+    "lint": "node_modules/.bin/eslint --fix --ignore-path .gitignore .",
+    "lint:watch": "node_modules/nodemon/bin/nodemon.js node_modules/.bin/eslint --fix --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
@@ -16,8 +18,11 @@
     "url": "https://github.com/gary-mcmonagle/AOC2018/issues"
   },
   "homepage": "https://github.com/gary-mcmonagle/AOC2018#readme",
-  "dependencies": {},
+  "dependencies": {
+    "nodemon": "^1.19.1"
+  },
   "devDependencies": {
+    "eslint": "^6.0.1",
     "jest": "^23.6.0"
   }
 }

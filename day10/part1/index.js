@@ -43,7 +43,7 @@ const createThreeByThreeGrids = (grid) => {
 
 const setPower = (x, y, gridSerialNumber) => {
   let rackId = x + 10
-  power = rackId * y
+  let power = rackId * y
   power += gridSerialNumber
   power *= rackId
   if(power < 100){
